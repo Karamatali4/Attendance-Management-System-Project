@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import logo from "../assets/images/logo.png";
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { useAuth } from '../hooks/useAuth';
+// import { useAuth } from '../hooks/useAuth';
 
 function Login() {
 
@@ -11,7 +13,7 @@ function Login() {
   });
 
   const navigate = useNavigate();
-
+const {storeTokenInLS} = useAuth();
   const handleInput = (e) => {
     const { name, value } = e.target;
 
@@ -37,8 +39,10 @@ function Login() {
       console.log(response);
 
       const res_data = await response.json();
+      console.log(res_data);
 
       if (response.ok) {
+        storeTokenInLS(res_data.token);
         toast.success("Login Successfully ...");
         navigate("/");
       } else {

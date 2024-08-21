@@ -19,7 +19,7 @@ function Home() {
             web-based attendance management system
           </h1>
           <Link
-            className="btn btn-outline-light btn-lg get_started"
+            className="btn btn-outline-light btn-lg get_started bg-transparent p-4 rounded-xl transition-all "
             to="/login"
           >
             Get Started

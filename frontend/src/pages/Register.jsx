@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import logo from "../assets/images/logo.png";
 import { Link, useNavigate } from 'react-router-dom'; // Use useNavigate instead of Navigate
 import { toast } from 'react-toastify';
+import { useAuth } from '../hooks/useAuth';
 
 function Register() {
   const [user, setUser] = useState({
@@ -14,6 +15,7 @@ function Register() {
 
   const navigate = useNavigate(); // Initialize useNavigate hook
 
+  const {storeTokenInLS} = useAuth()
   const handleInput = (e) => {
     const { name, value, type, files } = e.target;
     setUser({
@@ -41,7 +43,11 @@ function Register() {
       const res_data = await response.json();
       console.log("register", res_data);
 
+      
       if (response.ok) {
+
+        storeTokenInLS(res_data.token);
+
         toast.success("Registration Successful!");
         setUser({
           username: "",
