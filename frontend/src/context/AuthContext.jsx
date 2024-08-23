@@ -1,4 +1,5 @@
 import React, { createContext, useState,useContext } from 'react'
+import { toast } from 'react-toastify';
 
 
 export const AuthContext = createContext();
@@ -17,23 +18,25 @@ setToken(serverToken);
 localStorage.setItem("token",serverToken);
 };
 
-// const isLoggenIn = !!token;
-// console.log("isLoggenIn: ",isLoggenIn);
+const isLoggenIn = !!token;
+console.log("isLoggenIn: ",isLoggenIn);
 
 
 // Logout functionality
 
-// const LogoutUser = () => {
-//     setToken("");
-//     setUser(null);
-//     localStorage.removeItem("token");
-//     setisLoading(false);
-// };
+const LogoutUser = () => {
+  toast.info("Logout Succesfully ...");
+    setToken("");
+    setUser(null);
+    localStorage.removeItem("token");
+    setisLoading(false);
+
+};
 
 
   return (
     <AuthContext.Provider value={{
-        user,storeTokenInLS,isLoading,authorizationToken
+        user,storeTokenInLS,isLoading,authorizationToken,LogoutUser,isLoggenIn
     }}>
         {children}
     </AuthContext.Provider>

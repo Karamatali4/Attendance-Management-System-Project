@@ -20,6 +20,7 @@ import Reports from './pages/Reports';
 import GradingSystem from './pages/GradingSystem';
 import Errorpage from './pages/errorpage';
 import About from './pages/about';
+import Logout from './pages/Logout';
 
 // Importing context providers (if any)
 // import { AuthContextProvider } from './context/AuthContext';
@@ -37,6 +38,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/logout" element={<Logout/>} />
             <Route path="/about" element={<About/>} />
             <Route path="*" element={<Errorpage/>} />
             <Route path="/profile" element={<Profile />} />
