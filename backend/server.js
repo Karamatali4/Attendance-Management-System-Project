@@ -8,7 +8,7 @@ const cors = require("cors");
 const authRouter = require('./routes/authRoutes');
 const app = express();
 const PORT = process.env.PORT || 8000;
-
+const path = require("path");
 
 // tackles cors
 const corsOptions = {
@@ -21,7 +21,7 @@ app.use(express.json());
 
 
 app.use("/api/auth", authRouter);
-
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 connectedDB().then(() => {
     app.listen(PORT, () => {

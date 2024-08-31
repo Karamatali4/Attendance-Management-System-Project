@@ -12,8 +12,7 @@ const authMiddleware = async (req, res, next) => {
     const jwtToken = token.replace("Bearer", "").trim();
     console.log("Token from auth middleware", jwtToken);
 
-    // Debugging secret key
-    console.log("MYSECRETKEY: ", process.env.MYSECRETKEY);
+    
     
     // Verifying token
     const isVerified = jwt.verify(jwtToken, process.env.MYSECRETKEY);
@@ -21,11 +20,19 @@ const authMiddleware = async (req, res, next) => {
     // Find user without password
     const userData = await User.findOne({ email: isVerified.email }).select({ password: 0 });
     
+    const userResponse = {
+      ...userData.toObject(),
+      profilePicUrl: userData.profilePic ? `${req.protocol}://${req.get('host')}/uploads/${userData.profilePic}` : ''
+    };
     if (!userData) {
-      return res.status(404).json({ mes: "User not found" });
+      return res.status(404).json({ msg: "User not found" });
     }
 
-    req.user = userData;
+     
+
+    console.log("middleware ",userData)
+    // req.pic= userResponsepic;
+    req.user = userResponse;
     req.token = token;
     req.userID = userData._id;
     
@@ -34,7 +41,7 @@ const authMiddleware = async (req, res, next) => {
     console.error("Token Verification error: ", error.message);
     
     // Send a response on error
-    return res.status(401).json({ mes: "Invalid token" });
+    return res.status(401).json({ msg: "Invalid token" });
   }
 }
 

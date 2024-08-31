@@ -29,7 +29,12 @@ const register = async (req, res, next) => {
     // Generate JWT token
     const token = await newUser.generateToken();
     
-    res.status(201).json({ user: newUser, token, userId: newUser._id.toString() });
+    const userResponse = {
+      ...newUser.toObject(),
+      profilePicUrl: profilePic ? `${req.protocol}://${req.get('host')}/uploads/${profilePic}` : ''
+    };
+
+    res.status(201).json({ user: userResponse, token, userId: newUser._id.toString() });
   } catch (error) {
     next(error);
   }
@@ -58,9 +63,12 @@ const login = async (req, res, next) => {
 const user = async(req,res) => {
 
   try {
-    const userData = req.user;
+    // const userData = req.user;
+    const userResponse  = req.user;
     // console.log("usercontroller ",userData);
-    return res.status(200).json({userData});
+
+    
+    return res.status(200).json({userResponse});
     
   } catch (error) {
     console.log(error);
