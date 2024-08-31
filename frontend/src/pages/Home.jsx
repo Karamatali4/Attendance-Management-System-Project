@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function Home() {
   return (
     <>
-    <div className="landing">
+    <div className="landing ">
           <div className="home-wrap">
             <div className="home-inner">
               <div className="home-bg"></div>
