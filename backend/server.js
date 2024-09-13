@@ -6,6 +6,7 @@ const connectedDB = require('./config/db');
 
 const cors = require("cors");
 const authRouter = require('./routes/authRoutes');
+const adminRouter =  require('./routes/adminRoute');
 const app = express();
 const PORT = process.env.PORT || 8000;
 const path = require("path");
@@ -21,6 +22,7 @@ app.use(express.json());
 
 
 app.use("/api/auth", authRouter);
+app.use("/api/admin", adminRouter);
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 connectedDB().then(() => {
