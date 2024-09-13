@@ -8,19 +8,19 @@ function SideBar() {
   const Menus = [
     { title: "Dashboard", src: "Chart_fill",url:"/" },
     { title: "Mark Attendance", src: "Chat" },
-    { title: "Approvel Leave", src: "User", gap: true },
+    { title: "Approvel Leave", src: "User",  },
     { title: "Mark Leave ", src: "Calendar" },
     { title: "Grading System", src: "Search" },
     { title: "Report", src: "Search" },
     { title: "Grading System", src: "Search" },
     { title: "Student Detail", src: "Chart", url:"/admin/studentdetail" },
-    { title: "Profile ", src: "Folder", gap: true,url:"/admin/profile" },
-    { title: "See Complains ", src: "Folder", gap: true,url:"/admin/profile" },
+    { title: "Profile ", src: "Folder",url:"/admin/profile" },
+    { title: "See Complains ", src: "Folder",url:"/admin/profile" },
     { title: "Logot", src: "Setting",url:"logout" },
   ];
   return (
     <>
-     <div className="flex">
+     <div className="flex h-[100%] border-t-2 border-r-4 border-teal-500">
       <div
         className={` ${
           open ? "w-72" : "w-20 "

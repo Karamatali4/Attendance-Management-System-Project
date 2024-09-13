@@ -7,22 +7,32 @@ import SeeComplains from "./SeeComplains";
 import Logout from "../Logout";
 import Login from "../Login";
 import Register from "../Register";
+import { useAuth } from "../../hooks/useAuth";
 
 function AdminDashboard() {
+
+  const {user} = useAuth();
   return (
     <>
-<h2 className="text-3xl"> Admin Dashboard</h2>
-    <div className="container flex h-[100vh] w-[100%] justify-between items-center">
+    <div className="container ">
+     {/* navbar */}
+<div className="flex justify-between">
+<h2 className="text-2xl font-bold text-teal-500"> Admin Dashboard</h2>
+<h2 className="text-2xl text-teal-500">{user.role}</h2>
+</div>
 
+
+{/* dashboard section */}
+<div className="flex h-[100vh] w-[100%] justify-between  ">
     {/* sidebar */}
-        <div className="w-[20%]">
+        <div className=" w-[26%] lg:w-[15%]">
         <SideBar/>
         </div>
 
 
 
     {/* main section */}
-        <div className="w-[80%] text-center">
+        <div className="w-[80%] ">
        
         <Routes>
             <Route path="/" element={<AdminHomePage/>} />
@@ -41,6 +51,7 @@ function AdminDashboard() {
    <Route path="/register" element={<Register />} />
 
         </Routes>
+        </div>
         </div>
     </div>
     </>
