@@ -20,7 +20,7 @@ function AdminDashboard() {
 <h2 className="text-2xl font-bold text-teal-500"> Admin Dashboard</h2>
 <h2 className="text-2xl text-teal-500">{user.role}</h2>
 </div>
-
+<hr />
 
 {/* dashboard section */}
 <div className="flex h-[100vh] w-[100%] justify-between  ">

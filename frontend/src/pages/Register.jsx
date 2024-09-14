@@ -67,7 +67,7 @@ function Register() {
 
   return (
     <>
-      <div className="container bg-teal-500 max-w-[75rem] mx-auto">
+      <div className="container bg-teal-500 max-w-[75rem] mx-auto h-auto overflow-auto  lg:overflow-auto  pt-10 pb-5" style={{overflowY: "hidden",}}>
         <div className="max-w-4xl mx-auto font-[sans-serif] p-6">
           <div className="text-center mb-16">
             <a onClick={(e) => e.preventDefault()}>

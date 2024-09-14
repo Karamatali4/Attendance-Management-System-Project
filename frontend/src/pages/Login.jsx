@@ -55,7 +55,7 @@ const {storeTokenInLS} = useAuth();
 
   return (
     <>
-      <div className="container bg-teal-500 max-w-[75rem] mx-auto h-auto">
+      <div className="container bg-teal-500 max-w-[75rem] mx-auto h-[100vh]">
         <div className="flex flex-col justify-center font-[sans-serif] sm:h-screen p-4">
           <div className="max-w-md w-full mx-auto border border-gray-300 rounded-2xl p-8">
             <div className="text-center mb-10 font-bold text-2xl text-neutral-100 ">
