@@ -14,7 +14,7 @@ function StudentSidebar() {
     { title: "Report", src: "Search" },
     { title: "Grading System", src: "Search" },
     { title: "Profile ", src: "Folder",url:"/student/profile" },
-    { title: "Complain ", src: "Folder",url:"/student/profile" },
+    { title: "Complain ", src: "Folder",url:"/student/complain" },
     { title: "Logot", src: "Setting",url:"logout" },
   ];
   return (
@@ -47,7 +47,7 @@ function StudentSidebar() {
               !open && "scale-0"
             }`}
           >
-            Designer
+          
           </h1>
         </div>
         <ul className="pt-6">
