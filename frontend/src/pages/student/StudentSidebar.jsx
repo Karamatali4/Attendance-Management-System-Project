@@ -2,11 +2,12 @@ import { useState } from "react";
 import logo from "../../assets/images/logo.png";
 import { NavLink } from "react-router-dom";
 import { FaArrowCircleLeft } from "react-icons/fa";
+// import dashboard from "../../assets/images/dashboard.png";
 
 function StudentSidebar() {
   const [open, setOpen] = useState(true);
   const Menus = [
-    { title: "Dashboard", src: "Chart_fill",url:"/" },
+    { title: "Dashboard", src: "dashboard",url:"/" },
     { title: "Mark Attendance", src: "Chat" },
     { title: "Approvel Leave", src: "User",  },
     { title: "Mark Leave ", src: "Calendar" },
@@ -61,7 +62,8 @@ function StudentSidebar() {
               } `}
             >
               <NavLink to={Menu.url}>
-              {/* <img src={`./src/assets/${Menu.src}.png`} /> */}
+              <img src={`../../assets/images/${Menu.src}.png`} />
+            
               {/* <NavLink> logout</NavLink> */}
               <span className={`${!open && "hidden"} origin-left duration-200`}>
                 {Menu.title}

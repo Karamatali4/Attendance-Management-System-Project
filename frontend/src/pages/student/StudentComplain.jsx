@@ -57,7 +57,7 @@ function StudentComplain() {
       <div className="flex justify-end">
         <button
         type="submit"
-        className="py-4 px-6 bg-blue-950 text-white rounded-sm hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-800"
+        className="py-4 px-6 bg-cyan-800 text-white rounded-lg hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-800"
       >
         Post Comment →
       </button>
