@@ -25,14 +25,14 @@ function AdminDashboard() {
 {/* dashboard section */}
 <div className="flex h-[100vh] w-[100%] justify-between  ">
     {/* sidebar */}
-        <div className=" w-[26%] lg:w-[15%]">
+        <div className=" w-[27%] lg:w-[15%]">
         <SideBar/>
         </div>
 
 
 
     {/* main section */}
-        <div className="w-[80%] ">
+        <div className="w-[73%] ">
        
         <Routes>
             <Route path="/" element={<AdminHomePage/>} />
