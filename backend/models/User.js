@@ -33,6 +33,11 @@ const userSchema = new mongoose.Schema({
     enum: ['male', 'female'], // Only allow 'male' or 'female'
     required: true, // Gender is required
   },
+  classes: {
+    type: String,
+    enum: ['class 8', 'class9','class10'], // Only allow 'male' or 'female'
+    required: true, // Gender is required
+  },
 }, {
   timestamps: true, // Automatically add createdAt and updatedAt fields
 });

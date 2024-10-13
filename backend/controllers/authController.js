@@ -15,7 +15,7 @@ const upload = multer({ storage });
 // Register Controller
 const register = async (req, res, next) => {
   try {
-    const { username, email, password, gender } = req.body;
+    const { username, email, password, gender,classes } = req.body;
     const profilePic = req.file ? req.file.filename : '';
 
     // Check if email already exists
@@ -24,7 +24,7 @@ const register = async (req, res, next) => {
     }
 
     // Create and save new user
-    const newUser = await new User({ username, email, password, profilePic, gender }).save();
+    const newUser = await new User({ username, email, password, profilePic, gender,classes }).save();
 
     // Generate JWT token
     const token = await newUser.generateToken();
