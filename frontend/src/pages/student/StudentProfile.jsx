@@ -17,6 +17,7 @@ function StudentProfile() {
                 </div>
         </div>
         <div className="md:col-span-3 h-auto shadow p-4 space-y-10 mt-10">
+            <h2 className='text-cyan-800 font-bold text-3xl'> {user.classes.slice(0, 5) + " " + user.classes.slice(5) }</h2>
                 <div className="flex ">
                     <span
                         className="text-sm  font-bold uppercase border-2 rounded-l px-4 py-2 bg-gray-50 whitespace-no-wrap w-2/6">Name:</span>

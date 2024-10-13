@@ -59,7 +59,7 @@ const {storeTokenInLS} = useAuth();
         <div className="flex flex-col justify-center font-[sans-serif] sm:h-screen p-4">
           <div className="max-w-md w-full mx-auto border border-gray-300 rounded-2xl p-8">
             <div className="text-center mb-10 font-bold text-2xl text-neutral-100 ">
-              Login here
+              Student Login here
             </div>
 
             <form onSubmit={handleSubmit}>
