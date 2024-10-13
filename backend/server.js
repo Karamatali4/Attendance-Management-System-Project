@@ -11,9 +11,10 @@ const app = express();
 const PORT = process.env.PORT || 8000;
 const path = require("path");
 
+const frontendurl = 5173 || 5174;
 // tackles cors
 const corsOptions = {
-    origin: "http://localhost:5174",
+    origin: `http://localhost:${frontendurl}`,
     methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
     credentials: true,
   };
