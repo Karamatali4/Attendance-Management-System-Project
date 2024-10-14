@@ -59,7 +59,7 @@ function StudentSidebar() {
               className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-800 hover:text-blue-600 text-sm items-center gap-x-4 
               ${Menus.gap ? "mt-9" : "mt-2"} `}
             >
-              <NavLink to="/">
+              <NavLink to="/student/viewAttendance">
                 <span
                   className={`${!open && "hidden"} origin-left duration-200`}
                 >

@@ -7,6 +7,7 @@ import StudentHomePage from "./StudentHomePage";
 import StudentProfile from "./StudentProfile";
 import StudentComplain from "./StudentComplain";
 import StudentSidebar from "./StudentSidebar";
+import ViewAttendance from './ViewAttendance';
 
 function StudentDashboard() {
 
@@ -37,7 +38,7 @@ function StudentDashboard() {
             <Route path="/" element={<StudentHomePage/>} />
             <Route path="*" element={<Navigate to='/'/>} />
             <Route path="/student/dashboard" element={<StudentHomePage/>} />
-            <Route path="/student/markAttendance" element={<StudentHomePage/>} />
+            <Route path="/student/viewAttendance" element={<ViewAttendance/>} />
             <Route path="/student/approvelLeave" element={<StudentHomePage/>} />
             <Route path="/student/markLeave" element={<StudentHomePage/>} />
             <Route path="/student/gradingSystem" element={<StudentHomePage/>} />
